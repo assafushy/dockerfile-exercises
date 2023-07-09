@@ -44,7 +44,7 @@ Instructions:
 3. Copy nginx.conf file to the default nginx configuration directory - /etc/nginx/conf.d/default.conf
 4. Expose port 80." option
 5. Set the default command for the image to run nginx in the foreground - "nginx -g daemon off;"
-6. In Docker run, mount the newly created directory to the container's `/var/www` directory.So that the files in the container are mapped to the files in the host machine directory with the index.html.
+6. In Docker run, mount the newly created directory to the container's `/usr/share/nginx/my_site` directory.So that the files in the container are mapped to the files in the host machine directory with the index.html.
 
 Docker commands:
 
