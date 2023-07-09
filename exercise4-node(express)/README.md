@@ -4,7 +4,7 @@ Description: This image will run a Node.js app and expose port 3000.
 
 Before Starting your Dockerfile:
 
-1. Create a directory named `exercise3-env-var`.
+1. Create a directory named `exercise4-nodejs`.
 2. Create a file named `app.js` with the following contents.
 3. Create a file named `package.json` with the following contents.
 
