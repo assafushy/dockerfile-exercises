@@ -40,7 +40,7 @@ server {
 Instructions:
 
 1. Use the nginx image as your base.
-2. Create a new directory, `/var/www`, for your web content.
+2. Create a new directory, `/usr/share/nginx/my_site`, for your web content.
 3. Copy nginx.conf file to the default nginx configuration directory - /etc/nginx/conf.d/default.conf
 4. Expose port 80." option
 5. Set the default command for the image to run nginx in the foreground - "nginx -g daemon off;"
