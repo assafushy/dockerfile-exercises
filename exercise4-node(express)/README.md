@@ -47,7 +47,7 @@ Instructions:
 2. Create a directory named `/app` for your application.
 3. Set this directory as your work directory.
 4. Copy package.json into the image.
-5. Install all dependencies using `np, install` command.
+5. Install all dependencies using `npm install` command.
 6. Copy your app into the image.
 7. Expose port 3000.
 8. Start your Node.js app, using `npm start` command.
