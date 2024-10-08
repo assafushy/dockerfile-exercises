@@ -10,5 +10,5 @@ CMD ["nginx", "-g", "daemon off;"]
 ```
 
 ```bash
-docker run -d -p 8080:80 -v /my/local/dir:/var/www my-nginx-volume
+docker run -d -p 8080:80 -v $(pwd):/usr/share/nginx/my_site my-nginx-volume
 ```
