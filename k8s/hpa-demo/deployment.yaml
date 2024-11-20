@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: stress-app
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: stress-app
+  template:
+    metadata:
+      labels:
+        app: stress-app
+    spec:
+      containers:
+        - name: stress-ng
+          image: ghcr.io/alexei-led/stress-ng # A reliable stress-ng image
+          resources:
+            requests:
+              cpu: "100m"
+              memory: "128Mi"
+            limits:
+              cpu: "500m"
+              memory: "128Mi"
+          args:
+            - "--cpu"
+            - "1" # Number of CPU workers
+            - "--timeout"
+            - "300s" # Run for 5 minutes

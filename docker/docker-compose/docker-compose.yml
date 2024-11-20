@@ -1,10 +1,4 @@
 version: "3.8"
-
-# Define networks to allow communication between services
-networks:
-  app_network:
-    driver: bridge
-
 # Define services
 services:
   # Service 1: Web Application
@@ -19,14 +13,11 @@ services:
       - QUEUE_HOST=rabbitmq
     volumes:
       - ./web:/app
-    working_dir: /app
-    command: flask run --host=0.0.0.0
     ports:
       - "5000:5000"
     depends_on:
       - db
       - rabbitmq
-
   # Service 2: PostgreSQL Database
   db:
     image: postgres:13-alpine
@@ -39,7 +30,6 @@ services:
       POSTGRES_DB: webapp_db
     volumes:
       - postgres_data:/var/lib/postgresql/data
-
   # Service 3: RabbitMQ (Message Queue)
   rabbitmq:
     image: rabbitmq:3-management
@@ -56,3 +46,9 @@ services:
 # Define volumes for persistent storage
 volumes:
   postgres_data:
+
+# Define networks to allow communication between services
+
+networks:
+  app_network:
+    driver: bridge
